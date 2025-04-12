@@ -1,0 +1,43 @@
+{
+  "name": "top-challenges-tests",
+  "version": "1.0.0",
+  "description": "Tests automatisu00e9s pour l'application mobile TOP CHALLENGES",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:backend && npm run test:integration && npm run test:frontend",
+    "test:backend": "jest --config ./config/jest.backend.config.js",
+    "test:frontend": "detox test -c ios.sim.debug",
+    "test:integration": "jest --config ./config/jest.integration.config.js",
+    "coverage": "npm run coverage:backend && npm run coverage:integration && npm run coverage:merge",
+    "coverage:backend": "jest --config ./config/jest.backend.config.js --coverage",
+    "coverage:integration": "jest --config ./config/jest.integration.config.js --coverage",
+    "coverage:merge": "nyc merge coverage/ .nyc_output/out.json && nyc report --reporter=text --reporter=lcov --reporter=html",
+    "ci": "npm test && npm run coverage"
+  },
+  "keywords": [
+    "test",
+    "react-native",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "supertest": "^6.3.3",
+    "mongodb-memory-server": "^8.12.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/jest": "^29.5.0",
+    "@types/supertest": "^2.0.12",
+    "babel-jest": "^29.5.0",
+    "detox": "^20.8.0",
+    "jest": "^29.5.0",
+    "jest-circus": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  }
+}

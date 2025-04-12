@@ -1,0 +1,15 @@
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  testMatch: ['**/integration-tests/**/*.test.js', '**/integration-tests/**/*.test.ts'],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  verbose: true,
+  forceExit: true,
+  clearMocks: true,
+  resetMocks: true,
+  restoreMocks: true,
+  setupFilesAfterEnv: ['./config/jest.integration.setup.js'],
+  collectCoverage: true,
+  coverageDirectory: 'coverage/integration',
+  coverageReporters: ['text', 'lcov', 'clover', 'html'],
+};
