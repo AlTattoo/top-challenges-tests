@@ -1,3 +1,4 @@
+
 # TOP CHALLENGES - Tests Automatisés
 
 Ce projet contient des tests automatisés pour l'application mobile TOP CHALLENGES, une salle de loisirs connectée où les joueurs s'affrontent dans différentes zones de jeu.
@@ -48,3 +49,4 @@ npm run test:frontend
 - Visualisation des replays
 - Système de challenges
 - Achat de personnalisations
+
